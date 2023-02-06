@@ -1,8 +1,8 @@
 #' Create edgelist from a group by individual matrix
 #' @export
 create_edgelist = function(gbi){
-  num.mat = get_numerator(gbi, data_format = "GBI", return = "matrix")
-  den.mat = get_denominator(gbi, data_format = "GBI", return = "matrix")
+  num.mat = aninet::get_numerator(gbi, data_format = "GBI", return = "matrix")
+  den.mat = aninet::get_denominator(gbi, data_format = "GBI", return = "matrix")
 
   R = ncol(gbi)
   edgelist = list()
@@ -22,10 +22,10 @@ create_edgelist = function(gbi){
     }
     edgelist[[i]] = bind_rows(edgelist[[i]])
   }
-  edgelist = bind_rows(edgelist)
-  edgelist = as_tibble(edgelist)
-  edgelist = distinct(edgelist)
-  edgelist = filter(edgelist, A!=B)
+  edgelist = dplyr::bind_rows(edgelist)
+  edgelist = dplyr::as_tibble(edgelist)
+  edgelist = dplyr::distinct(edgelist)
+  edgelist = dplyr::filter(edgelist, A!=B)
   # edgelist = filter(edgelist, den >0)
   # edgelist = filter(edgelist, num >0)
   return(edgelist)
