@@ -12,3 +12,6 @@ LazyData: true
 RoxygenNote: 7.1.2
 URL: https://github.com/samellisq/SamsUsefulFunctions
 BugReports: https://github.com/samellisq/SamsUsefulFunctions/issues
+Imports: 
+    aninet
+Remotes: MNWeiss/aninet
