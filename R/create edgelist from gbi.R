@@ -1,4 +1,5 @@
 #' Create edgelist from a group by individual matrix
+#' @export
 create_edgelist = function(gbi){
 num.mat = get_numerator(gbi, data_format = "GBI", return = "matrix")
 den.mat = get_denominator(gbi, data_format = "GBI", return = "matrix")
