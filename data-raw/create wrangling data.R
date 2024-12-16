@@ -25,4 +25,8 @@ wrangle.df$factor1 = "Sam"
 wrangle.df$factor1[6:10] = "Andy"
 wrangle.df$factor1 = as.factor(wrangle.df$factor1)
 
+wrangle.df$factor2 = "Sam"
+wrangle.df$factor2[6:10] = "Tim"
+
+
 usethis::use_data(wrangle.df, overwrite = TRUE)
